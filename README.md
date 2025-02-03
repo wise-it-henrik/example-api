@@ -32,7 +32,7 @@ You will now be able to make curl requests (or similar) to http://locahost:5000
 
 
 ## API Endpoints
-1. Get All JSON Files
+#### 1. Get All JSON Files
 Endpoint: /json-files
 Method: GET
 Description: Returns all JSON files.
@@ -41,12 +41,13 @@ Sample Request:
 curl -X GET http://127.0.0.1:5000/json-files
 Sample Response:
 
-[
+```[
     {"id": 1, "content": "Random sentence 1"},
     {"id": 2, "content": "Random sentence 2"},
     {"id": 3, "content": "Random sentence 3"}
-]
-2. Get JSON File by ID
+]```
+\
+#### 2. Get JSON File by ID
 Endpoint: /json-files/<int:file_id>
 Method: GET
 Description: Returns the JSON file with the specified ID.
@@ -59,7 +60,8 @@ Sample Response:
     "id": 1,
     "content": "Random sentence 1"
 }
-3. Create JSON File
+\
+#### 3. Create JSON File
 Endpoint: /json-files
 Method: POST
 Description: Creates a new JSON file with the provided content.
@@ -72,7 +74,8 @@ Sample Response:
     "id": 4,
     "content": "New content"
 }
-4. Update JSON File
+\
+#### 4. Update JSON File
 Endpoint: /json-files/<int:file_id>
 Method: PUT
 Description: Updates the JSON file with the specified ID. The request must include a "mode" header with values "overwrite" or "append".
@@ -94,7 +97,8 @@ Sample Response (Append):
     "id": 1,
     "content": "Random sentence 1 Appended content"
 }
-5. Delete JSON File
+\
+#### 5. Delete JSON File
 Endpoint: /json-files/<int:file_id>
 Method: DELETE
 Description: Deletes the JSON file with the specified ID.
