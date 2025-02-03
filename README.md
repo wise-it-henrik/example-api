@@ -11,13 +11,14 @@ Assuming you have everything to run python code, these are the steps to setting 
 Clone this repository to a diretory of your choice.
 
 ##### 2. Virtual environment
-1. Create a python virtual environment.
+Create a python virtual environment. 
 ```python3 -m venv .venv```
-2. Activate the virtual environment
-- On Windows:
-  ```venv\Scripts\activate```
-- On macOS and Linux:
-  ```source venv/bin/activate```
+Activate the virtual environment
+- On Windows:  
+```venv\Scripts\activate```
+- On macOS and Linux:  
+```source venv/bin/activate```
 
 ##### 3. Installing libraries
-Install the required libraries.
+Install the required libraries.  
+```pip install requirements.txt```
