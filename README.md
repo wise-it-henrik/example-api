@@ -49,7 +49,7 @@ Sample Response:
     {"id": 3, "content": "Random sentence 3"}
 ]
 ```
-
+***
 #### Get JSON File by ID
 Endpoint: /json-files/<int:file_id>\
 Method: GET\
@@ -65,7 +65,7 @@ Sample Response:
     "content": "Random sentence 1"
 }
 ```
-
+***
 #### Create JSON File
 Endpoint: /json-files\
 Method: POST\
@@ -81,7 +81,7 @@ Sample Response:
     "content": "New content"
 }
 ```
-
+***
 #### Update JSON File
 Endpoint: /json-files/<int:file_id>\
 Method: PUT\
@@ -110,7 +110,7 @@ Sample Response (Append):
     "content": "Random sentence 1 Appended content"
 }
 ```
-
+***
 #### Delete JSON File
 Endpoint: /json-files/<int:file_id>\
 Method: DELETE\
