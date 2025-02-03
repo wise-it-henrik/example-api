@@ -57,14 +57,28 @@ def create_json_file():
 @app.route('/json-files/<int:file_id>', methods=['PUT'])
 def update_json_file(file_id):
     content = request.json.get('content')
+    mode = request.headers.get('mode')
+    
     if not content:
         return jsonify({"error": "Content is required"}), 400
     
+    if mode not in ['overwrite', 'append']:
+        return jsonify({"error": "Invalid mode. Use 'overwrite' or 'append'"}), 400
+    
     filepath = os.path.join(json_folder, f'{file_id}.json')
     if os.path.exists(filepath):
+        with open(filepath, 'r') as f:
+            file_data = json.load(f)
+        
+        if mode == 'overwrite':
+            file_data['content'] = content
+        elif mode == 'append':
+            file_data['content'] += content
+        
         with open(filepath, 'w') as f:
-            json.dump({"id": file_id, "content": content}, f)
-        return jsonify({"id": file_id, "content": content})
+            json.dump(file_data, f)
+        
+        return jsonify({"id": file_id, "content": file_data['content']})
     else:
         return jsonify({"error": "File not found"}), 404
 
