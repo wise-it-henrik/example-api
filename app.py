@@ -8,11 +8,16 @@ json_folder = 'json_files'
 if not os.path.exists(json_folder):
     os.makedirs(json_folder)
 
-# Generate three files with id 1-3 with random one-sentenced text if the folder is empty
+# Generate three files with id 1-3 with sample text if the folder is empty
+content = [
+    "Lorem ipsum dolor",
+    "Hello world!",
+    "Roses are red, violets are blue"
+]
 if not os.listdir(json_folder):
     for i in range(1, 4):
         with open(os.path.join(json_folder, f'{i}.json'), 'w') as f:
-            json.dump({"id": i, "content": f"Random sentence {i}"}, f)
+            json.dump({"id": i, "content": f"{content[i - 1]}"}, f)
 
 # Helper function to get the next available id
 def get_next_id():
